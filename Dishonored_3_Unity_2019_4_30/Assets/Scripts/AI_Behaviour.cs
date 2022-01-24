@@ -46,6 +46,7 @@ public class AI_Behaviour : MonoBehaviour
     RigidbodyFirstPersonController controller;
     bool bladeInHand;
     Transform playerPos;
+    Transform nearestEnnemy;
 
 
     // Use this for initialization
