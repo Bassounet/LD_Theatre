@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 923, y: 492}
   m_MaxSize: {x: 20008, y: 14042}
   vertical: 1
-  controlID: 441
+  controlID: 2530
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 923, y: 492}
   m_MaxSize: {x: 20008, y: 14042}
   vertical: 0
-  controlID: 442
+  controlID: 2531
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 647, y: 492}
   m_MaxSize: {x: 16007, y: 14042}
   vertical: 1
-  controlID: 443
+  controlID: 2532
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_MinSize: {x: 647, y: 221}
   m_MaxSize: {x: 16007, y: 4021}
   vertical: 0
-  controlID: 444
+  controlID: 2533
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 518
+  controlID: 2325
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -461,7 +461,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
+    m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
@@ -475,7 +475,7 @@ MonoBehaviour:
       y: 21
       width: 500
       height: 632
-    m_Scale: {x: 1.0609, y: 1.0609}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 250, y: 316}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -483,10 +483,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -235.64899
-      y: -297.86032
-      width: 471.29797
-      height: 595.72064
+      x: -250
+      y: -316
+      width: 500
+      height: 632
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 500, y: 653}
@@ -523,10 +523,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 58fbffff
+      scrollPos: {x: 0, y: 1000}
+      m_SelectedIDs: 425d0000
+      m_LastClickedID: 23874
+      m_ExpandedIDs: 26e7ffff58fbffffde5700003e580000525900001e5c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -611,9 +611,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 41.954914, y: 1.7865106, z: -131.22813}
+    m_Target: {x: 105.907196, y: 3.627635, z: -90.636246}
     speed: 2
-    m_Value: {x: 41.954914, y: 1.7865106, z: -131.22813}
+    m_Value: {x: 105.907196, y: 3.627635, z: -90.636246}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -659,13 +659,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.008147313, y: 0.99018717, z: -0.06576194, w: 0.12366287}
+    m_Target: {x: -0.02738974, y: 0.82499045, z: -0.039777353, w: -0.563282}
     speed: 2
-    m_Value: {x: 0.008147313, y: 0.9901871, z: -0.06576193, w: 0.12366287}
+    m_Value: {x: -0.02823115, y: 0.8248357, z: -0.041010294, w: -0.56317604}
   m_Size:
-    m_Target: 84.13208
+    m_Target: 21.030813
     speed: 2
-    m_Value: 84.13208
+    m_Value: 20.12518
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -793,19 +793,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scene
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scene
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\GAME1\Documents\GitHub\LD_Theatre\Dishonored_3_Unity_2019_4_30
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 7e550000
-    m_LastClickedID: 21886
+    m_SelectedIDs: 32560000
+    m_LastClickedID: 22066
     m_ExpandedIDs: 000000007e55000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -918,7 +918,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -5716
+  m_LastSelectedObjectID: 22436
 --- !u!114 &24
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1045,5 +1045,5 @@ MonoBehaviour:
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 22436
   m_LastVerticalScrollValue: 0
