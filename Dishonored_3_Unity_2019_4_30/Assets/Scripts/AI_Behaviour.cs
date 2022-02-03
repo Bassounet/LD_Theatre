@@ -14,7 +14,7 @@ public class AI_Behaviour : MonoBehaviour
     public bool isChoking;
     public bool isKilling;
     public bool knockoutByChoke;
-    public bool reachingDestination = true;
+    public bool reachingDestination = false;
     [HideInInspector]
     public int viewPlayer;
     public float awarenessMeter_White = 0;
@@ -48,6 +48,17 @@ public class AI_Behaviour : MonoBehaviour
     Transform playerPos;
 
 
+    [Header("Ronde")]
+
+    public bool inGuard;
+    public bool target2;
+    public bool target1;
+    public bool goneforguard;
+    [SerializeField] GameObject Target1, Target2;
+
+
+
+
     // Use this for initialization
     void Start()
     {
@@ -72,6 +83,27 @@ public class AI_Behaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (awarenessMeter_White != 0 )
+        {
+
+            inGuard = false;
+
+        }
+        else
+        {
+
+            inGuard = true;
+
+        }
+
+        if (inGuard)
+        {
+
+            GoVisiting1();
+
+        }
+
+
         CheckState();
         if (isDead || isUnconscious)
         {
@@ -209,6 +241,7 @@ public class AI_Behaviour : MonoBehaviour
         {
             if (col.gameObject.layer == 9 || col.gameObject.layer == 10) Physics.IgnoreCollision(col, playerCol);
         }
+
     }
 
 
@@ -414,4 +447,45 @@ public class AI_Behaviour : MonoBehaviour
             bladeInHand = true;
         }
     }
+
+    public void GoVisiting1()
+    {
+                                                   
+            if (!goneforguard)
+            {
+
+                agent.SetDestination(Target1.transform.position);
+                target2 = true;
+                goneforguard = true;
+
+            }
+
+        if (agent.remainingDistance < 0.01f)
+        {
+            Debug.Log("Je viens d'arriver");
+            if (target2 && goneforguard)
+            {
+
+                target2 = false;
+                target1 = true;
+                Debug.Log("la target 1 est " + Target1.transform.position);
+                agent.SetDestination(Target1.transform.position);
+
+            }
+        }
+
+
+            if (agent.remainingDistance < 0.01f && target1)
+            {
+
+                target2 = true;
+                target1 = false;
+                Debug.Log("la target 2 est " + Target2.transform.position);
+                agent.SetDestination(Target2.transform.position);
+
+            }
+
+        
+    }
+
 }
