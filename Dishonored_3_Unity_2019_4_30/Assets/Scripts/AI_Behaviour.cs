@@ -53,7 +53,9 @@ public class AI_Behaviour : MonoBehaviour
     public bool inGuard;
     public bool target2;
     public bool target1;
-    public bool goneforguard;
+    public bool adystarted;
+    public bool aldyStartedTarget1;
+    public bool aldyStartedTarget2;
     [SerializeField] GameObject Target1, Target2;
 
 
@@ -83,23 +85,51 @@ public class AI_Behaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (awarenessMeter_White != 0 )
+        //if (awarenessMeter_White != 0 )
+        //{
+
+        //    inGuard = false;
+
+        //}
+        //else
+        //{
+
+        //    inGuard = true;
+
+        //}
+
+        if (inGuard && !adystarted)
         {
 
-            inGuard = false;
-
+            agent.SetDestination(Target1.transform.position);
+            adystarted = true;
         }
-        else
+
+        if (agent.remainingDistance < 1f)
         {
+            Debug.Log("Let's Go");
 
-            inGuard = true;
+            if (target1 && !aldyStartedTarget1)
+            {
 
-        }
+                aldyStartedTarget1 = true;
+                target1 = false;
+                agent.SetDestination(Target1.transform.position);
+                target2 = true;
+                aldyStartedTarget2 = false;
 
-        if (inGuard)
-        {
+            }
 
-            GoVisiting1();
+            if (target2 && !aldyStartedTarget2)
+            {
+
+                aldyStartedTarget2 = true;
+                target2 = false;
+                agent.SetDestination(Target2.transform.position);
+                target1 = true;
+                aldyStartedTarget1 = false;
+
+            }
 
         }
 
@@ -448,44 +478,65 @@ public class AI_Behaviour : MonoBehaviour
         }
     }
 
-    public void GoVisiting1()
-    {
-                                                   
-            if (!goneforguard)
-            {
+    //public void GoVisiting1()
+    //{
 
-                agent.SetDestination(Target1.transform.position);
-                target2 = true;
-                goneforguard = true;
+    //    Debug.Log("Parti");
 
-            }
+    //        if (!goneforguard)
+    //        {
 
-        if (agent.remainingDistance < 0.01f)
-        {
-            Debug.Log("Je viens d'arriver");
-            if (target2 && goneforguard)
-            {
-
-                target2 = false;
-                target1 = true;
-                Debug.Log("la target 1 est " + Target1.transform.position);
-                agent.SetDestination(Target1.transform.position);
-
-            }
-        }
+    //            adystarted = true;
+    //            agent.SetDestination(Target1.transform.position);
+    //            target2 = true;
+    //            goneforguard = true;
+                
 
 
-            if (agent.remainingDistance < 0.01f && target1)
-            {
+    //    }
 
-                target2 = true;
-                target1 = false;
-                Debug.Log("la target 2 est " + Target2.transform.position);
-                agent.SetDestination(Target2.transform.position);
+    //        if (agent.remainingDistance < 0.01f && target2 && GoneMoment)
+    //        {
 
-            }
+    //            GoVisiting2();
 
-        
-    }
+    //        }
 
+
+    //        if (agent.remainingDistance < 0.01f && target1)
+    //        {
+
+    //            GoVisiting3();
+
+    //        }
+  
+    //}
+
+    //public void GoVisiting2()
+    //{
+    //    Debug.Log("GoToTarget1"); 
+
+    //    if (target2 && goneforguard)
+    //    {
+
+          
+    //      Debug.Log("la target 1 est " + Target1.transform.position);
+    //      agent.SetDestination(Target1.transform.position);
+    //      inGuard = false;
+
+    //    }
+
+    //}
+
+    //public void GoVisiting3()
+    //{
+
+    //    Debug.Log("GoToTarget1");
+    //    target2 = true;
+    //    target1 = false;
+    //    Debug.Log("la target 2 est " + Target2.transform.position);
+    //    agent.SetDestination(Target2.transform.position);
+    //    inGuard = false;
+
+    //}
 }
