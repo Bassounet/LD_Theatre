@@ -54,6 +54,7 @@ public class AI_Behaviour : MonoBehaviour
     public bool target2;
     public bool target1;
     public bool adystarted;
+    public bool adystartedGoTarget;
     public bool aldyStartedTarget1;
     public bool aldyStartedTarget2;
     [SerializeField] GameObject Target1, Target2;
@@ -97,37 +98,32 @@ public class AI_Behaviour : MonoBehaviour
         //    inGuard = true;
 
         //}
-
+        inGuard = true;
         if (inGuard && !adystarted)
         {
 
             agent.SetDestination(Target1.transform.position);
+            target1 = true;
             adystarted = true;
+
         }
 
-        if (agent.remainingDistance < 1f)
+        if (agent.remainingDistance < 1f )
         {
             Debug.Log("Let's Go");
+            adystartedGoTarget = false;
 
-            if (target1 && !aldyStartedTarget1)
+            if (target1 && !aldyStartedTarget1 && !adystartedGoTarget)
             {
 
-                aldyStartedTarget1 = true;
-                target1 = false;
-                agent.SetDestination(Target1.transform.position);
-                target2 = true;
-                aldyStartedTarget2 = false;
+                GoTarget1();
 
             }
 
-            if (target2 && !aldyStartedTarget2)
+            if (target2 && !aldyStartedTarget2 && !adystartedGoTarget)
             {
 
-                aldyStartedTarget2 = true;
-                target2 = false;
-                agent.SetDestination(Target2.transform.position);
-                target1 = true;
-                aldyStartedTarget1 = false;
+                GoTarget2();
 
             }
 
@@ -181,7 +177,32 @@ public class AI_Behaviour : MonoBehaviour
     }
 
 
+    public void GoTarget1()
+    {
 
+        Debug.Log("Je vais target 1");
+
+        aldyStartedTarget1 = true;
+        target1 = false;
+        agent.SetDestination(Target1.transform.position);
+        target2 = true;
+        aldyStartedTarget2 = false;
+        adystartedGoTarget = true;
+
+    }
+
+    public void GoTarget2()
+    {
+        Debug.Log("Go To Target 2");
+
+        aldyStartedTarget2 = true;
+        target2 = false;
+        agent.SetDestination(Target2.transform.position);
+        target1 = true;
+        aldyStartedTarget1 = false;
+        adystartedGoTarget = true;
+
+    }
 
     void CheckState()
     {
@@ -478,6 +499,9 @@ public class AI_Behaviour : MonoBehaviour
         }
     }
 
+
+    #region OLD_VERSION 
+
     //public void GoVisiting1()
     //{
 
@@ -490,7 +514,7 @@ public class AI_Behaviour : MonoBehaviour
     //            agent.SetDestination(Target1.transform.position);
     //            target2 = true;
     //            goneforguard = true;
-                
+
 
 
     //    }
@@ -509,7 +533,7 @@ public class AI_Behaviour : MonoBehaviour
     //            GoVisiting3();
 
     //        }
-  
+
     //}
 
     //public void GoVisiting2()
@@ -519,7 +543,7 @@ public class AI_Behaviour : MonoBehaviour
     //    if (target2 && goneforguard)
     //    {
 
-          
+
     //      Debug.Log("la target 1 est " + Target1.transform.position);
     //      agent.SetDestination(Target1.transform.position);
     //      inGuard = false;
@@ -539,4 +563,8 @@ public class AI_Behaviour : MonoBehaviour
     //    inGuard = false;
 
     //}
+
+    #endregion 
+
+   
 }
